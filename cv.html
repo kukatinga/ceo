@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Ochieng' | Transforming Africa's Urban Landscape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a0a12;
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f9d423 100%);
+            --light: #f9f9f9;
+            --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--light);
+            background-color: var(--primary-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header - Glass Morphism */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 18, 0.7);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold-gradient);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 10, 18, 0.7), rgba(10, 10, 18, 0.7)), 
+                        url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--gold-gradient);
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+
+        /* Global Experience Section */
+        .experience {
+            padding: 100px 0;
+            background: var(--secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--gold-gradient);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .experience-content {
+            display: flex;
+            gap: 60px;
+        }
+
+        .experience-text {
+            flex: 1;
+        }
+
+        .experience-text h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .experience-text p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .experience-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+        }
+
+        .stat-card h4 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        /* Current Projects Section */
+        .current-projects {
+            padding: 120px 0;
+            background: var(--primary-dark);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .project-highlights {
+            margin-top: 15px;
+        }
+
+        .project-highlights li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .project-highlights li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* Career Highlights */
+        .career {
+            padding: 120px 0;
+            background: var(--secondary);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover .timeline-content {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+        }
+
+        .timeline-item h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item h5 {
+            font-size: 16px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            top: 30px;
+            right: -10px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even):before {
+            left: -10px;
+        }
+
+        /* Philanthropy Section */
+        .philanthropy {
+            padding: 100px 0;
+            background: var(--primary-dark);
+            text-align: center;
+        }
+
+        .philanthropy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philanthropy-content h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .philanthropy-content p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--secondary);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 60px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            font-size: 20px;
+            color: var(--gold);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p, .contact-text a {
+            opacity: 0.9;
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            font-size: 18px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            flex: 1;
+            background: var(--primary-dark);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 80px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 60px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .experience-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .timeline:before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:before {
+                left: 21px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .experience-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Chris <span>Ochieng'</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#experience">Global Experience</a></li>
+                    <li><a href="#projects">Current Projects</a></li>
+                    <li><a href="#career">Career</a></li>
+                    <li><a href="#philanthropy">Philanthropy</a></li>
+                    <li><a href="#contact">Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Shaping Africa's Urban Future with <span class="gold-text">Engineering Excellence</span></h1>
+                <p>CEO of GulfCap RE |Founder of Urban Feat Developments | 20+ years transforming Africa's landscape through visionary real estate development</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View Current Projects</a>
+                    <a href="https://www.linkedin.com/in/chris-ochieng-profile" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global <span class="gold-text">Expertise</span></h2>
+            </div>
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h3>From Dubai to Nairobi: A Track Record of Excellence</h3>
+                    <p>With a career spanning construction, project & engineering management, maintenance, facilities management, structuring, and asset management, I bring comprehensive expertise to every development.</p>
+                    <p>My technical, organizational, and communication skills have successfully delivered projects across the construction and hospitality industries throughout Africa and the Middle East.</p>
+                    <p>What sets me apart is an unwavering commitment to timelines and budgets - a discipline honed through managing billion-dollar developments across diverse markets.</p>
+                </div>
+                <div class="experience-stats">
+                    <div class="stat-card">
+                        <h4>20+</h4>
+                        <p>Years in Construction & Development</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>$5B+</h4>
+                        <p>Total Project Value Delivered</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>4,000+</h4>
+                        <p>Jobs Created Across Africa</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>100%</h4>
+                        <p>Projects Completed On Budget</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Projects Section -->
+    <section class="current-projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Current <span class="gold-text">Ventures</span></h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="LV Marina">
+                    </div>
+                    <div class="project-info">
+                        <h3>LV Marina, Kisumu</h3>
+                        <p>Phase 1 construction underway for this transformative waterfront development on Lake Victoria.</p>
+                        <ul class="project-highlights">
+                            <li>State-of-the-art Marina overlooking Lake Victoria</li>
+                            <li>Luxury waterfront villas & urban apartments</li>
+                            <li>Modern schools & healthcare facilities</li>
+                            <li>Retail spaces & recreational hubs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Two Rivers Development">
+                    </div>
+                    <div class="project-info">
+                        <h3>Two Rivers Development</h3>
+                        <p>103-acre mixed-use urban node with 852,000 sqm of build-up area in Nairobi's diplomatic Blue Zone.</p>
+                        <ul class="project-highlights">
+                            <li>East Africa's largest retail mall</li>
+                            <li>Class A office spaces</li>
+                            <li>Luxury residential units</li>
+                            <li>State-of-the-art infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Pearl Marina">
+                    </div>
+                    <div class="project-info">
+                        <h3>Pearl Marina, Uganda</h3>
+                        <p>400-acre waterfront city with 1.5 million sqm of built-up area in Entebbe.</p>
+                        <ul class="project-highlights">
+                            <li>Luxury waterfront residences</li>
+                            <li>International school & hospital</li>
+                            <li>Commercial & leisure facilities</li>
+                            <li>Recreational marina</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Highlights -->
+    <section class="career" id="career">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career <span class="gold-text">Milestones</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Chief Executive Officer</h4>
+                        <h5>GulfCap RE | Oct 2022 - Present</h5>
+                        <p>Leading strategic direction for one of East Africa's premier real estate development firms, currently overseeing the landmark LV Marina project in Kisumu.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Founder & CEO</h4>
+                        <h5>Urban Feat Developments | Jul 2019 - Mar 2023</h5>
+                        <p>Built a full-service real estate firm providing end-to-end solutions from master planning to facilities management across East Africa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Senior Development Manager</h4>
+                        <h5>Tatu City Limited | Nov 2016 - Jul 2019</h5>
+                        <p>Played key role in developing Africa's largest new city project - 2,500 acres with amenities for 70,000+ residents.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Managing Director</h4>
+                        <h5>Athena Properties Ltd | Nov 2014 - Nov 2016</h5>
+                        <p>Led development of Two Rivers Mall and Pearl Marina, creating over 3,000 jobs. Grew company from startup to 35 employees.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Construction Manager</h4>
+                        <h5>Dubai Sports City | Oct 2007 - Aug 2010</h5>
+                        <p>Managed construction of this $3 billion sports metropolis in the UAE, gaining invaluable international experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philanthropy Section -->
+    <section class="philanthropy" id="philanthropy">
+        <div class="container">
+            <div class="section-title">
+                <h2>Giving <span class="gold-text">Back</span></h2>
+            </div>
+            <div class="philanthropy-content">
+                <h3>Mentoring Africa's Next Generation</h3>
+                <p>Beyond developing physical infrastructure, I am deeply committed to developing human potential. I am passionate about sports and through my foundation, Angaza, I am actively involved in sports development and sponsorship in Western Kenya using athletics as a platform to inspire and empower...</p>
+                <p>Each of my developments incorporates social impact components - from creating thousands of jobs to building schools and healthcare facilities that serve surrounding communities.</p>
+                <a href="#contact" class="btn">Learn About Partnership Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Strategic <span class="gold-text">Connections</span></h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Build Africa's <span class="gold-text">Future</span></h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>For LV Marina Inquiries</h4>
+                            <p><a href="tel:+254702421655">+254 702421655</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:chris@gulfcapre.com">chris@gulfcapre.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>GulfCap RE Headquarters</h4>
+                              Merchant Square, Block A, 5th Floor Riverside Dr, Nairobi
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/chris-ochieng-profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Interest Area</label>
+                            <select id="interest" class="form-control" required>
+                                <option value="">Select Option</option>
+                                <option value="investment">Investment Opportunity</option>
+                                <option value="partnership">Strategic Partnership</option>
+                                <option value="development">Development Consultation</option>
+                                <option value="philanthropy">Philanthropic Collaboration</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">Chris <span>Ochieng'</span></a>
+            <div class="footer-links">
+                <a href="#experience">Expertise</a>
+                <a href="#projects">Projects</a>
+                <a href="#career">Career</a>
+                <a href="#philanthropy">Philanthropy</a>
+                <a href="#contact">Connect</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Chris Ochieng'. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Project card hover effect
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+        });
+    </script>
+</body>
+</html>
